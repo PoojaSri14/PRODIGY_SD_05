@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Scraping UI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
 
+    h1 {
+      text-align: center;
+      color: #4a148c;
+    }
+
+    .scraper-form {
+      max-width: 500px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .scraper-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .scraper-form input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .scraper-form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .scraped-data {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .scraped-data table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .scraped-data th, .scraped-data td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .scraped-data th {
+      background-color: #6a1b9a;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Web Scraping Simulator</h1>
+
+  <div class="scraper-form">
+    <label for="url">Website URL</label>
+    <input type="text" id="url" placeholder="Enter e-commerce URL">
+
+    <label for="category">Product Category</label>
+    <input type="text" id="category" placeholder="e.g., Laptops, Headphones">
+
+    <button onclick="simulateScraping()">Scrape</button>
+  </div>
+
+  <div class="scraped-data" id="results" style="display:none;">
+    <h2>Sample Scraped Data</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sample Headphones</td>
+          <td>₹999</td>
+          <td>4.3</td>
+        </tr>
+        <tr>
+          <td>Bluetooth Speaker</td>
+          <td>₹1,499</td>
+          <td>4.5</td>
+        </tr>
+        <tr>
+          <td>Gaming Mouse</td>
+          <td>₹799</td>
+          <td>4.1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function simulateScraping() {
+      document.getElementById("results").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
